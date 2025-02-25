@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <div class="bg-black border-b border-gray-800 pl-8 pr-14 py-4 flex justify-between items-center">
+        <div class="flex justify-center items-center gap-2">
+            <img src="icon-star-logo.svg" alt="" class="h-6 w-6">
+            <h1 class="text-2xl font-semibold">Star Vibe</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="relative">
+                <i data-lucide="bell" class="w-6 h-6 text-[#A79E9A] hover:text-white cursor-pointer"></i>
+                <div class="absolute -top-1 -right-1 w-4 h-4 bg-orange-600 rounded-full flex items-center justify-center">
+                    <span class="text-xs text-white">3</span>
+                </div>
+            </div>
+            <div class="w-8 h-8 rounded-full overflow-hidden">
+                <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Profile" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar and Main Content -->
+    <div class="flex h-[calc(100vh-4rem)]">
+        <div class="w-64 bg-black border-r border-gray-800 px-3 py-8 flex flex-col">
+            <div class="mb-8">
+                <ul class="space-y-3">
+                    <li class="flex items-center space-x-3 bg-orange-950 rounded-lg px-3 py-2 border border-orange-500">
+                        <i data-lucide="layout-dashboard" class="w-5 h-5 text-orange-500"></i>
+                        <span class="text-orange-500">Visão Geral</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-[#A79E9A] px-3 py-1">
+                        <i data-lucide="users" class="w-5 h-5 text-[#A79E9A]"></i>
+                        <span>Inscritos</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-[#A79E9A] px-3 py-1">
+                        <i data-lucide="message-square" class="w-5 h-5 text-current"></i>
+                        <span>Bate-papo</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-4">Conteúdo</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-center space-x-3 text-[#A79E9A] px-3 py-1">
+                        <i data-lucide="file-text" class="w-5 h-5 text-current"></i>
+                        <span>Postagens</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-[#A79E9A] px-3 py-1">
+                        <i data-lucide="video" class="w-5 h-5 text-current"></i>
+                        <span>Vídeos</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-[#A79E9A] px-3 py-1">
+                        <i data-lucide="image" class="w-5 h-5 text-current"></i>
+                        <span>Fotos</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-4">Configurações</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-center space-x-3 text-[#A79E9A] px-3 py-1">
+                        <i data-lucide="settings" class="w-5 h-5 text-current"></i>
+                        <span>Conta</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-[#A79E9A] px-3 py-1">
+                        <i data-lucide="credit-card" class="w-5 h-5 text-current"></i>
+                        <span>Assinatura</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 overflow-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-semibold">Visão Geral</h1>
+                    <div class="flex items-center space-x-4">
+                        <button class="px-4 py-2 bg-orange-600 rounded-full text-sm font-medium flex items-center space-x-2">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <span>Adicionar Conteúdo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-4 gap-6 mb-8">
+                    <div class="border border-[#202c43] rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-[#A79E9A]">Total de Inscritos</h3>
+                            <i data-lucide="users" class="w-5 h-5 text-orange-600"></i>
+                        </div>
+                        <p class="text-3xl font-semibold">2,543</p>
+                        <p class="text-sm text-green-500 mt-2">+12% desde o mês passado</p>
+                    </div>
+                    <div class="border border-[#202c43] rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-[#A79E9A]">Vendas Totais</h3>
+                            <i data-lucide="dollar-sign" class="w-5 h-5 text-orange-600"></i>
+                        </div>
+                        <p class="text-3xl font-semibold">R$12.426</p>
+                        <p class="text-sm text-green-500 mt-2">+8% desde o mês passado</p>
+                    </div>
+                    <div class="border border-[#202c43] rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-[#A79E9A]">Total de Conteúdo</h3>
+                            <i data-lucide="file-text" class="w-5 h-5 text-orange-600"></i>
+                        </div>
+                        <p class="text-3xl font-semibold">156</p>
+                        <p class="text-sm text-green-500 mt-2">+24 novos itens</p>
+                    </div>
+                    <div class="border border-[#202c43] rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-[#A79E9A]">Chats Ativos</h3>
+                            <i data-lucide="message-square" class="w-5 h-5 text-orange-600"></i>
+                        </div>
+                        <p class="text-3xl font-semibold">28</p>
+                        <p class="text-sm text-orange-500 mt-2">5 mensagens não lidas</p>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="border border-[#202c43] rounded-xl p-6">
+                    <h2 class="text-xl font-semibold mb-4">Atividades Recentes</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-orange-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="user-plus" class="w-5 h-5 text-orange-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Novo Inscrito</p>
+                                    <p class="text-sm text-[#A79E9A]">João Silva se inscreveu no seu conteúdo</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">2 min atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-green-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="dollar-sign" class="w-5 h-5 text-green-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Nova Venda</p>
+                                    <p class="text-sm text-[#A79E9A]">Pacote premium de conteúdo comprado</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">15 min atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-purple-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="message-circle" class="w-5 h-5 text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Novo Comentário</p>
+                                    <p class="text-sm text-[#A79E9A]">Maria comentou no seu último post</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">30 min atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-blue-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="heart" class="w-5 h-5 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Nova Curtida</p>
+                                    <p class="text-sm text-[#A79E9A]">50 pessoas curtiram seu vídeo</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">1 hora atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-yellow-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="star" class="w-5 h-5 text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Nova Avaliação</p>
+                                    <p class="text-sm text-[#A79E9A]">Avaliação 5 estrelas recebida</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">2 horas atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-red-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="video" class="w-5 h-5 text-red-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Novo Vídeo</p>
+                                    <p class="text-sm text-[#A79E9A]">Você publicou um novo vídeo</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">3 horas atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-indigo-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="share" class="w-5 h-5 text-indigo-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Conteúdo Compartilhado</p>
+                                    <p class="text-sm text-[#A79E9A]">Seu post foi compartilhado 20 vezes</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">4 horas atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-pink-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="gift" class="w-5 h-5 text-pink-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Nova Doação</p>
+                                    <p class="text-sm text-[#A79E9A]">Recebeu uma doação de R$50</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">5 horas atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-teal-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="calendar" class="w-5 h-5 text-teal-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Evento Agendado</p>
+                                    <p class="text-sm text-[#A79E9A]">Live marcada para amanhã</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">6 horas atrás</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-cyan-950 rounded-full flex items-center justify-center">
+                                    <i data-lucide="trophy" class="w-5 h-5 text-cyan-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Meta Alcançada</p>
+                                    <p class="text-sm text-[#A79E9A]">1000 inscritos alcançados!</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-[#A79E9A]">8 horas atrás</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
