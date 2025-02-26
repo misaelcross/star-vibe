@@ -1,5 +1,6 @@
 import DiscordIcon from "@/components/icons/discord-icon";
 import { Button } from "@/components/ui/button";
+import { RegisterModal } from "../register-modal";
 import {
   Card,
   CardContent,
@@ -38,11 +39,10 @@ export const CommunitySection = () => {
             </CardContent>
 
             <CardFooter>
-              <Button asChild>
-                <a href="https://discord.com/" target="_blank">
-                  Juntar-se
-                </a>
-              </Button>
+              <RegisterModal
+                buttonText="Juntar-se"
+                triggerClassName="px-8 font-bold group/arrow flex items-center justify-center mx-auto bg-gradient-to-r from-[#D247BF] to-primary text-white hover:opacity-90"
+              />
             </CardFooter>
           </Card>
         </div>

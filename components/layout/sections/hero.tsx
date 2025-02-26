@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import Link from "next/link";
+import { RegisterModal } from "../register-modal";
 
 export const HeroSection = () => {
   const { theme } = useTheme();
@@ -36,12 +36,10 @@ export const HeroSection = () => {
           </p>
 
           <div className="space-y-4 md:space-y-0">
-            <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-              <Link href="#pricing" className="flex items-center">
-                Quero me cadastrar
-                <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            <RegisterModal
+              buttonText="Quero me cadastrar"
+              triggerClassName="w-5/6 md:w-1/4 font-bold group/arrow flex items-center justify-center mx-auto bg-gradient-to-r from-[#D247BF] to-primary text-white hover:opacity-90"
+            />
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import Image from "next/image";
+import { RegisterModal } from "../register-modal";
 
 export const FooterSection = () => {
   return (
@@ -8,7 +9,7 @@ export const FooterSection = () => {
       <div className="p-10 bg-card border border-secondary rounded-2xl">
         <div className="flex flex-col sm:flex-row justify-between w-full gap-8 sm:gap-0">
           <div className="col-span-full xl:col-span-2">
-            <Link href="#" className="flex font-bold items-center">
+            <Link href="/" className="flex font-bold items-center">
               <Image
                 src="/icon-star-logo.svg"
                 alt="Star Vibe Logo"
@@ -20,7 +21,7 @@ export const FooterSection = () => {
             </Link>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 items-start sm:items-start">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 items-start sm:items-center">
             <div>
               <Link href="#testimonials" className="opacity-60 hover:opacity-100">
                 Depoimentos
@@ -34,9 +35,10 @@ export const FooterSection = () => {
             </div>
 
             <div>
-              <Link href="#pricing" className="opacity-60 hover:opacity-100">
-                Criar Conta
-              </Link>
+              <RegisterModal
+                buttonText="Criar conta"
+                triggerClassName="opacity-60 hover:opacity-100"
+              />
             </div>
           </div>
         </div>

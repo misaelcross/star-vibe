@@ -22,6 +22,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { ToggleTheme } from "./toogle-theme";
+import { RegisterModal } from "./register-modal";
 
 interface RouteProps {
   href: string;
@@ -33,6 +34,14 @@ interface FeatureProps {
   description: string;
 }
 const routeList: RouteProps[] = [
+  {
+    href: "#benefits",
+    label: "Benefícios",
+  },
+  {
+    href: "#pricing",
+    label: "Planos",
+  },
   {
     href: "#testimonials",
     label: "Depoimentos",
@@ -117,15 +126,10 @@ export const Navbar = () => {
             </div>
 
             <SheetFooter className="flex-row items-center justify-between w-full">
-              <Button
-                asChild
-                variant="secondary"
-                className="w-full font-bold"
-              >
-                <Link href="#pricing" target="_self">
-                  Criar conta
-                </Link>
-              </Button>
+              <RegisterModal
+                buttonText="Criar conta"
+                triggerClassName="w-full font-bold"
+              />
             </SheetFooter>
           </SheetContent>
         </Sheet>
@@ -166,11 +170,10 @@ export const Navbar = () => {
         </NavigationMenu>
 
         <div className="flex items-center gap-4">
-          <Button asChild variant="secondary" className="font-bold">
-            <Link href="#pricing" target="_self">
-              Criar conta
-            </Link>
-          </Button>
+          <RegisterModal
+            buttonText="Criar conta"
+            triggerClassName="font-bold"
+          />
         </div>
       </div>
     </header>

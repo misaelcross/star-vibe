@@ -3,7 +3,7 @@ import { Icon } from "@/components/ui/icon";
 import { icons } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { RegisterModal } from "../register-modal";
 
 interface BenefitsProps {
   icon: string;
@@ -42,7 +42,7 @@ export const BenefitsSection = () => {
   return (
     <section id="benefits" className="container py-24 sm:py-32">
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
-        <div>
+        <div className="justify-start items-start flex flex-col">
           <h2 className="text-lg text-primary mb-2 tracking-wider">Benefícios</h2>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -53,13 +53,11 @@ export const BenefitsSection = () => {
             podemos ajudar você a monetizar seu conteúdo de forma eficiente
             e segura.
           </p>
-          <div className="mt-12 text-left">
-            <Button asChild variant="default" className="font-bold">
-              <Link href="#pricing" className="flex items-center">
-                Quero me cadastrar
-                <ArrowRight className="size-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+          <div className="mt-4 text-left">
+            <RegisterModal
+              buttonText="Quero me cadastrar"
+              triggerClassName="px-6 font-bold group/arrow flex items-center justify-center mx-auto bg-gradient-to-r from-[#D247BF] to-primary text-white hover:opacity-90"
+            />
           </div>
         </div>
 

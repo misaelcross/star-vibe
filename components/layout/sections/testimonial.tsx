@@ -120,7 +120,7 @@ export const TestimonialSection = () => {
                         alt={review.name}
                         className="object-cover"
                       />
-                      <AvatarFallback>SV</AvatarFallback>
+                      <AvatarFallback>JS</AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col">
                       <CardTitle className="text-lg">{review.name}</CardTitle>

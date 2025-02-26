@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { RegisterModal } from "../register-modal";
 import {
   Card,
   CardContent,
@@ -75,7 +76,7 @@ const plans: PlanProps[] = [
 
 export const PricingSection = () => {
   return (
-    <section className="container py-24 sm:py-32">
+    <section id="pricing" className="container py-24 sm:py-32">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
         Planos
       </h2>
@@ -100,38 +101,34 @@ export const PricingSection = () => {
               }
             >
               <CardHeader>
-                <CardTitle className="pb-2">{title}</CardTitle>
-
-                <CardDescription className="pb-4">
-                  {description}
-                </CardDescription>
-
-                <div>
-                  <span className="text-3xl font-bold">R$ {price.toFixed(2).replace(".", ",")}</span>
-                  <span className="text-muted-foreground"> /mês</span>
-                </div>
+                <CardTitle className="text-xl">{title}</CardTitle>
+                <CardDescription>{description}</CardDescription>
               </CardHeader>
 
-              <CardContent className="flex">
-                <div className="space-y-4">
+              <CardContent className="grid gap-4">
+                <div className="text-3xl font-bold">
+                  R$ {price.toFixed(2)}
+                  <span className="text-sm font-normal">/mês</span>
+                </div>
+
+                <div className="grid gap-2">
                   {benefitList.map((benefit) => (
-                    <span key={benefit} className="flex">
-                      <Check className="text-primary mr-2" />
-                      <h3>{benefit}</h3>
-                    </span>
+                    <div
+                      key={benefit}
+                      className="flex items-center gap-2 text-muted-foreground"
+                    >
+                      <Check className="size-4 text-primary" />
+                      <span>{benefit}</span>
+                    </div>
                   ))}
                 </div>
               </CardContent>
 
               <CardFooter>
-                <Button
-                  variant={
-                    popular === PopularPlan?.YES ? "default" : "secondary"
-                  }
-                  className="w-full"
-                >
-                  {buttonText}
-                </Button>
+                <RegisterModal
+                  buttonText={buttonText}
+                  triggerClassName="w-full font-bold"
+                />
               </CardFooter>
             </Card>
           )
